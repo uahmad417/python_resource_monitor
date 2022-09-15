@@ -1,5 +1,5 @@
 import psutil
-from .constants import PROTOCOL_MAP, NETSTAT_OUTPUT_FORMAT, IPCONFIG_OUTPUT_FORMAT
+from package.resources.constants import PROTOCOL_MAP, NETSTAT_OUTPUT_FORMAT, IPCONFIG_OUTPUT_FORMAT
 
 def netstat():
     print(NETSTAT_OUTPUT_FORMAT.format('Proto','Local Address','Foreign Address','State','PID'))

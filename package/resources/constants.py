@@ -19,7 +19,8 @@ IPCONFIG_OUTPUT_FORMAT ='\
     Subnet Mask: {:<15}\n\
     IPv6 Address: {:<15}'
 
-from resources import network
+from package.resources import network
+from package.monitor_cli import args
 FUNCTION_MAP = {
     'network': network.ipconfig if args.int else network.netstat
 }
