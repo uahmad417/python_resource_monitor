@@ -22,3 +22,24 @@ IPCONFIG_OUTPUT_FORMAT ='\
 
 PS_OUTPUT_FORMAT = '{:<10}{:<30}{:<15}{:<}'
 PS_OUTPUT_FORMAT_VERBOSE = '{:<25}{:<10}{:<35}{:<10}{:<10}{:<10}{:15}{:<}'
+
+'''CPU_OUTPUT_FORMAT = '\
+    Platform: {:>15}\n\
+    CPU(s): {:>15}\n\
+    Thread(s) per core: {:>15}\n\
+    Core(s) per socket: {:>15}\n\
+    CPU MHz: {:>15}\n\
+    Usage(%): {:>15}\n\
+    CPU Times (user): {:>15.2f}\n\
+    CPU Times (system): {:>15.2f}\n\
+    CPU Times (idle): {:>15.2f}' '''
+CPU_OUTPUT_FORMAT = '\
+    {:<20}: {:>}\n\
+    {:<20}: {:>}\n\
+    {:<20}: {:>}\n\
+    {:<20}: {:>}\n\
+    {:<20}: {:>}\n\
+    {:<20}: {:>}\n\
+    {:<20}: {:>.2f}\n\
+    {:<20}: {:>.2f}\n\
+    {:<20}: {:>.2f}'     
