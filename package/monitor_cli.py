@@ -1,5 +1,4 @@
 import argparse
-#from resources import network
 
 def cli():
     parser = argparse.ArgumentParser(
@@ -13,47 +12,55 @@ def cli():
         required=True)
 
     cpu_parser = subparser.add_parser(
-        'cpu', 
+        'cpu',
+        usage='monitor.py cpu [OPTIONS]',
+        description='Displays CPU related information such as the seconds the CPU has spent in the given mode, processor count, percentage usage and CPU frequency',
         help='Display CPU Information')
 
     network_parser = subparser.add_parser(
         'network',
-        help='Display network Information', 
+        help='Display network Information',
+        description='Without any options, displays system-wide socket connections',
         usage='monitor.py network [OPTIONS]')
     network_parser.add_argument(
         '-i',
         '--interface',
-        help='Display interface addreses', 
+        help='Display interface addresses', 
         action='store_true')
 
     memory_parser = subparser.add_parser(
-        'memory', 
-        help='Display memory Information')
+        'memory',
+        description='Displays statistics about system and swap memory usage',
+        usage='monitory.py memory [-h]', 
+        help='Displays system memory Information')
 
     disk_parser = subparser.add_parser(
-        'disk', 
+        'disk',
+        usage='monitory.py disk [OPTIONS]',
+        description='Without any options, gives summary of mounted drives and filesystems', 
         help='Display disk Information')
     disk_parser.add_argument(
         '-p',
         '--partition',
-        help='Show Disk Partitions',
+        help='Displays all mounted disk partitions',
         action='store_true'
     )
     disk_parser.add_argument(
         '-u',
         '--usage',
-        help='Show Disk Usage information',
+        help='Displays disk usage statistics about partitions',
         action='store_true'
     )
 
     process_parser = subparser.add_parser(
         'process',
-        usage='monitor.py process [OPTION]', 
-        help='Display process Information')
+        usage='monitor.py process [OPTION]',
+        description='Displays running ', 
+        help='Display process Information about running process')
     process_parser.add_argument(
         '-v',
         '--verbose',
         action='store_true',
-        help='Display extended process information'
+        help='Displays extended process information'
     )
     return vars(parser.parse_args())
