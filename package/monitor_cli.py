@@ -1,12 +1,6 @@
 import argparse
 #from resources import network
 
-from package.resources import network
-FUNCTION_MAP = {
-    'network': network.ipconfig if args.int else network.netstat
-}
-
-
 def cli():
     parser = argparse.ArgumentParser(
     description='Simple Python Resource Monitor',
@@ -28,7 +22,7 @@ def cli():
     usage='monitor.py network [OPTIONS]')
     network_parser.add_argument(
     '-i',
-    '--int',
+    '--interface',
     help='Display interface addreses', 
     action='store_true')
 
@@ -41,8 +35,15 @@ def cli():
     help='Display disk Information')
 
     process_parser = subparser.add_parser(
-    'process', 
+    'process',
+    usage='monitor.py process [OPTION]', 
     help='Display process Information')
-    args = parser.parse_args()
+    process_parser.add_argument(
+        '-v',
+        '--verbose',
+        action='store_true',
+        help='Display extended process information'
+    )
 
-    return parser.parse_args().resource
+    args = parser.parse_args()
+    return vars(args)

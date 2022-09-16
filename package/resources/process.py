@@ -1,6 +1,6 @@
 import psutil
 from datetime import datetime
-from constants import PS_OUTPUT_FORMAT_VERBOSE, PS_OUTPUT_FORMAT
+from package.resources.constants import PS_OUTPUT_FORMAT_VERBOSE, PS_OUTPUT_FORMAT
 
 def ps():
     processes = [proc for proc in psutil.process_iter(['username','pid','name','cpu_percent','memory_percent','cmdline','ppid'])]
@@ -25,5 +25,3 @@ def ps_verbose():
         memory_percent = process.info['memory_percent']
         ppid = process.info['ppid']
         print(PS_OUTPUT_FORMAT_VERBOSE.format(user,pid,name,ppid,cpu_percent,memory_percent,started,cmdline))
-
-ps_verbose()
