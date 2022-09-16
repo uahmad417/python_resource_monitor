@@ -12,6 +12,7 @@ def ps():
         name = process.info['name']
         print(PS_OUTPUT_FORMAT.format(pid,name,started,cmdline))
 
+#need to work on properly formating cpu_percent and memory_percent
 def ps_verbose():
     processes = [proc for proc in psutil.process_iter(['username','pid','name','cpu_percent','memory_percent','cmdline','ppid'])]
     print(PS_OUTPUT_FORMAT_VERBOSE.format('USER','PID','NAME','PPID','%CPU','%MEM','START','COMMAND'))
