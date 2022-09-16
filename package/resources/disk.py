@@ -1,6 +1,6 @@
 import psutil
 from psutil._common import bytes2human
-from constants import DF_OUTPUT_FORMAT
+from package.resources.constants import DF_OUTPUT_FORMAT
 
 def disk_partitions():
     for partition in psutil.disk_partitions():
@@ -27,4 +27,3 @@ def df():
             bytes2human(psutil.disk_usage(partition.device).free),
             partition.mountpoint
         ))
-df()

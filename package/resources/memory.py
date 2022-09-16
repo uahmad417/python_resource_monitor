@@ -15,5 +15,3 @@ def main():
     pprint_tuple(psutil.virtual_memory())
     print('\nSwap\n----------')
     pprint_tuple(psutil.swap_memory())
-
-main()
