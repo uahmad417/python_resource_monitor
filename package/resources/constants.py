@@ -1,3 +1,4 @@
+from ctypes.wintypes import PSHORT
 from socket import AF_INET, socket
 from socket import SOCK_DGRAM
 from socket import SOCK_STREAM
@@ -19,8 +20,5 @@ IPCONFIG_OUTPUT_FORMAT ='\
     Subnet Mask: {:<15}\n\
     IPv6 Address: {:<15}'
 
-from package.resources import network
-from package.monitor_cli import args
-FUNCTION_MAP = {
-    'network': network.ipconfig if args.int else network.netstat
-}
+PS_OUTPUT_FORMAT = '{:<10}{:<30}{:<15}{:<}'
+PS_OUTPUT_FORMAT_VERBOSE = '{:<25}{:<10}{:<35}{:<10}{:<10}{:<10}{:15}{:<}'
