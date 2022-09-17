@@ -55,7 +55,7 @@ def cli():
     process_parser = subparser.add_parser(
         'process',
         usage='monitor.py process [OPTION]',
-        description='Displays running ', 
+        description='Displays running process information', 
         help='Display process Information about running process')
     process_parser.add_argument(
         '-v',
