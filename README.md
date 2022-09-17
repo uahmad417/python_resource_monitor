@@ -1,6 +1,6 @@
 # Description
 
-python_resource_monitor is a simple python utility that attempts to gives statistics about system resources. It uses the psutil module give statistics about system resources and esssentially acts as a clone of the standard UNIX utilities such as netstat, ifconfig, df and ps.
+python_resource_monitor is a simple python utility that attempts to gives statistics about system resources. It uses the psutil module to give statistics about system resources and esssentially acts as a clone of the standard UNIX utilities such as netstat, ifconfig, df and ps.
 
 # Dependencies
 
@@ -10,7 +10,7 @@ This utility requires the psutil module. Install it by:
 pip install psutil
 ```
 
-Currently the module only works in Windows systems
+Currently the tool only works in Windows systems, and requires python3 to work properly.
 
 # Usage
 
